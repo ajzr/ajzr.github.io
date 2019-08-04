@@ -1,1 +1,0 @@
-# ajzr.github.io
