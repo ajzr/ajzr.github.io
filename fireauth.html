@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form  name="myForm" onsubmit="return false">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="pswd"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pswd" required>
+
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" onclick="formdata()"class="registerbtn">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCyLkBz7jaLLcJ7Eq5dfe4rt6cP_U321VI",
+    authDomain: "aijazr.firebaseapp.com",
+    databaseURL: "https://aijazr.firebaseio.com",
+    projectId: "aijazr",
+    storageBucket: "aijazr.appspot.com",
+    messagingSenderId: "443016703997",
+    appId: "1:443016703997:web:e1c556188a30871f273394",
+    measurementId: "G-NHCLBMX3E4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+  const auth = firebase.auth();
+  const db=firebase.firestore();
+  db.settings({timestampInSnapshots: true});
+</script>
+
+<script>
+    function formdata() {  
+   var myform = document.forms["myForm"];
+  const email = myform["email"].value; 
+  const pswd = myform["pswd"].value;
+
+  // create user
+  auth.createUserWithEmailAndPassword(email,pswd).then(cred=>{
+console.log(cred.user);
+  })
+  alert(email+' '+pswd);   
+    }
+
+</script>
+
+<form onsubmit="return false">
+        <input type="text" size="30" value="Focus here and press enter">
+        <input type="submit" value="Submit" onclick="alert('click')">
+       </form>
+</body>
+</html>

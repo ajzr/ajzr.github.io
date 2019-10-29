@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUp</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+</head>
+<body>
+    
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        
+        <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Create Account</h4>
+            <p class="text-center">Get started with your free account</p>
+            
+            <form name="myform" onsubmit="return false">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input name="uname" class="form-control" placeholder="Full name" type="text" required>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                 </div>
+                <input name="uemail" class="form-control" placeholder="Email address" type="email" required>
+            </div> <!-- form-group// --><!-- form-group end.// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input name="upswd" class="form-control" placeholder="Create password" type="password" required>
+            </div> <!-- form-group// 
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Repeat password" type="password">
+            </div> 
+            deform-group// -->                                      
+            <div class="form-group">
+                <button type="submit"  onclick="usignup()" class="btn btn-primary btn-block"> Create Account  </button>
+            </div> <!-- form-group// -->      
+            <p class="text-center">Alread have an account? <a href="login.html">Log In</a> </p>                                                                 
+        </form>
+        </article>
+        </div> <!-- card.// -->
+        
+        </div> 
+        <!--container end.//-->
+        
+
+        
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+        <script src="fbauth.js"></script>
+        <script src="signup.js"></script>
+</body>
+
+</html>
